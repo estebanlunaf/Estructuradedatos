@@ -1,0 +1,37 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void serie(int b, int n);
+
+void main()
+{
+	int b,n;
+	do
+	{
+		cout<<"Ingrese la base de la potencia"<<endl;
+		cin>>b;
+		do
+		{
+			cout<<"Ingrese el limite de la serie"<<endl;
+			cin>>n;
+		} while(n%2==0);
+	} while(b<0 || n<0);
+
+	serie(b,n);
+		getch();
+}
+
+void serie (int b, int n)
+{
+	int cont=1, fact=1, pot=1, pn=1; float s=0;
+	while (cont<=n)
+	{
+		s=(s+((b*pot)/(fact*cont)))*pn;
+		pn=pn*(-1);
+		cont ++;
+	}
+	cout<<"La suma de la serie es; "<<s<<endl;
+}
