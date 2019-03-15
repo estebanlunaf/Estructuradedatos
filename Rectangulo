@@ -1,0 +1,66 @@
+------Rectangulo.h------
+#pragma once
+class Rectangulo
+{
+private:
+	float lado;
+	float ancho;
+public:
+	Rectangulo(float _lado, float _ancho);
+	~Rectangulo(void);
+	float area();
+	float perimetro();
+};
+
+--------Rectangulo.cpp--------
+#include "StdAfx.h"
+#include "Rectangulo.h"
+
+
+Rectangulo::Rectangulo(float _lado, float _ancho)
+{
+	lado=_lado;
+	ancho=_ancho;
+}
+
+
+Rectangulo::~Rectangulo(void)
+{
+}
+
+float Rectangulo::area()
+{
+	float aux;
+	aux=lado*ancho;
+	return aux;
+}
+
+float Rectangulo::perimetro()
+{
+	float aux;
+	aux=2*(lado+ancho);
+	return aux;
+}
+
+---------main()------------
+#include "stdafx.h"
+#include "Rectangulo.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+
+void main()
+{
+	float l, a;
+	cout<<"Ingrese lado: "<<endl;
+	cin>>l;
+	cout<<"Ingrese ancho: "<<endl;
+	cin>>a;
+	Rectangulo r1(l,a);
+	cout<<"El area es: "<<r1.area()<<endl;
+	cout<<"El perimetro es: "<<r1.perimetro();
+
+	getch();
+}
