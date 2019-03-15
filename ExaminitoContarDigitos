@@ -1,0 +1,56 @@
+----------------digitos.h--------------------------
+#pragma once
+class digitos
+{
+private:
+	int numero;
+public:
+	digitos(int _numero);
+	~digitos(void);
+	int contar();
+};
+-----------------digitos.cpp-----------------------
+#include "StdAfx.h"
+#include "digitos.h"
+
+
+digitos::digitos(int _numero)
+{
+	numero=_numero;
+}
+
+
+digitos::~digitos(void)
+{
+}
+
+int digitos::contar()
+{
+	int aux=0;
+	do{
+		numero=numero/10;
+		if(numero%10>=0)
+		{
+			aux++;
+		}
+	}while(numero>0);
+	return aux;
+}
+-------------------------Ejemplodigitos  (main)-----------------
+#include "stdafx.h"
+#include "digitos.h"
+#include "conio.h"
+#include <iostream>
+
+using namespace std;
+
+
+void main()
+{
+	float n;
+	cout<<"Ingrese numero:";
+	cin>>n;
+	digitos d1(n);
+	cout<<"La cantidad de digitos es: "<< d1.contar();
+	getch();
+}
