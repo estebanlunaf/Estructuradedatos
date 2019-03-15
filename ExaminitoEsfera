@@ -1,0 +1,51 @@
+----------------esfera.h------------------
+#pragma once
+class esfera
+{
+private:
+	float radio;
+public:
+	esfera(float _radio);
+	~esfera(void);
+	float area();
+};
+
+------------------esfera.cpp------------------------
+#include "StdAfx.h"
+#include "esfera.h"
+
+
+esfera::esfera(float _radio)
+{
+	radio=_radio;
+}
+
+
+esfera::~esfera(void)
+{
+}
+
+float esfera::area()
+{
+	float aux;
+	aux= 4*3.1415*radio*radio;
+	return aux;
+}
+
+----------------EjemploEsfera  (main)------------------------
+#include "stdafx.h"
+#include "esfera.h"
+#include "conio.h"
+#include <iostream>
+
+using namespace std;
+
+void main()
+{
+	float r;
+	cout<<"Ingrese el radio de la esfera: "<<endl;
+	cin>>r;
+	esfera e1(r);
+	cout<<"El area de la esfera es: "<<e1.area();
+	getch();
+}
