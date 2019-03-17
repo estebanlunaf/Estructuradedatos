@@ -1,0 +1,58 @@
+--------------cadena.h----------------
+#pragma once
+#include <string>
+using namespace std;
+class cadena
+{
+private:
+	string cad1;
+    string cad2;
+public:
+	cadena(string _cad1, string _cad2);
+	~cadena(void);
+	string concatenar();
+};
+
+---------------cadena.cpp----------------------
+#include "StdAfx.h"
+#include "cadena.h"
+
+
+cadena::cadena(string _cad1, string _cad2)
+{
+	cad1=_cad1;
+	cad2=_cad2;
+}
+
+
+cadena::~cadena(void)
+{
+}
+
+string cadena::concatenar()
+{
+	string cad3;
+	cad3=cad1+" "+cad2;
+	return cad3;
+}
+
+-----------------EjemploCadena  (main)----------------------
+#include "stdafx.h"
+#include "cadena.h"
+#include <iostream>
+#include"conio.h"
+
+using namespace std;
+
+
+void main()
+{
+	string c1, c2;
+	cout<<"Ingrese la primer frase: "<<endl;
+	getline(cin,c1);
+	cout<<"Ingrese la segunda frase: "<<endl;
+	getline(cin,c2);
+	cadena ca1(c1 , c2);
+	cout<<ca1.concatenar();
+	getch();
+}
