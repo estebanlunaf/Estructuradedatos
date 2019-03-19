@@ -1,0 +1,72 @@
+------------clase.h------------
+#pragma once
+class clase
+{
+private:
+	int vec[100];
+	int n;
+public:
+	clase(int _n);
+	~clase(void);
+	void cargar();
+	void promedio();
+};
+
+----------------clase.cpp----------
+#include "StdAfx.h"
+#include "clase.h"
+#include "conio.h"
+#include <iostream>
+using namespace std;
+
+clase::clase(int _n)
+{
+	n=_n;
+}
+
+
+clase::~clase(void)
+{
+}
+
+void clase::cargar()
+{
+	for (int i=0; i<n; i++){
+		cout<<"v["<<i<<"]=";
+		cin>>vec[i];
+	}
+}
+
+void clase::promedio()
+{
+	float aux=0, prom=0;
+	for( int i=0; i<n; i++){
+		aux=aux+vec[i];
+	}
+	prom=aux/n;
+	cout<<"El promedio es: "<<prom;
+}
+
+-------------Ejemp.cpp  (main)---------------
+#include "stdafx.h"
+#include "clase.h"
+#include "conio.h"
+#include <iostream>
+
+using namespace std;
+
+void main()
+{
+	int num=0;
+	do{
+		cout<<"Ingrese numero de elementos: ";
+		cin>>num;
+	} while( num<=0 || num>100);
+	clase c1(num);
+	c1.cargar();
+	c1.promedio();
+
+	getch();
+
+}
+
