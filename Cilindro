@@ -1,0 +1,59 @@
+#pragma once
+class Laboratorio
+{
+private:
+	float r,h;
+public:
+	Laboratorio(float _r, float _h );
+	~Laboratorio(void);
+	float areabase();
+	float arealateral();
+};
+
+//Laboratorio.cpp
+#include "StdAfx.h"
+#include "Laboratorio.h"
+
+
+Laboratorio::Laboratorio(float _r, float _h)
+{
+	r= _r;
+	h= _h;
+}
+Laboratorio::~Laboratorio(void)
+{
+}
+
+float Laboratorio::areabase()
+{
+	float a;
+	a=3.141516*(r*r);
+	return a;
+}
+
+float Laboratorio::arealateral()
+{
+	float a;
+	a=2*3.141516*r*h;
+	return a;
+}
+
+//EjemploLaboratorio
+#include "stdafx.h"
+#include "Laboratorio.h"
+#include <iostream>
+#include "conio.h"
+using namespace std;
+
+void main()
+{ float r,h;
+
+	cout<<"Ingrese el radio: ";
+	cin>> r;
+	cout<<"Ingrese la altura: ";
+	cin>>h;
+
+	Laboratorio v1(r,h);
+	cout<<"El area del cilindro es: "<<v1.areabase() + v1.arealateral();
+	getch();
+}
