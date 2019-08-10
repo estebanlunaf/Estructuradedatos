@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>mi primera vez</title>
+</head>
+<body>
+<H1>
+Lenguaje de etiquetas
+</H1>
+<img src="https://dam.ngenespanol.com/wp-content/uploads/2018/12/desierto-semillas.png" 
+
+width="100%" heigth="100%">
+<p style="color:hsla(0,100%,50%,1);">Justo como RGB, cuando se utiliza HSL puede modificar la 
+
+opacidad del color justo en la propiedad color. Utilice el prefijo hsla() e incluyen un cuarto 
+
+valor entre 0 y 1 para el nivel de opacidad que usted necesita.</p>
+
+<script>
+alert("hola mundo");
+</script>
+
+</body>
+</html>
